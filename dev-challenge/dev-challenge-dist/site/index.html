@@ -1,0 +1,55 @@
+<html>
+<head>
+    <!--
+    This is the library that provides websocket streaming pub/sub
+    The dev serverver is serving the html and javascript, but it also provides updating fx data on /fx/prices.
+     -->
+    <title>Currency pairs</title>
+    <script src="stomp.js"></script>
+    <script src="sparkline.js"></script>
+</head>
+<body>
+<div>
+
+    <h2>Below is the table with current Bid and Ask price for currency pairs</h2>
+    <div id = "table">
+
+    </div>
+    <section class="content">
+        <h3>Assumptions</h3>
+
+        <p>
+            For <strong>Sparklines</strong> I have assumed that data is coming every second and therefore
+            I have drawn it with latest 30 values considering 1 value per second.
+        </p>
+
+        <h3>Approach</h3>
+
+        <p>
+            I have started with defining table structure. After that added one row for each currency pair
+            and then updated them with latest values.
+        </p>
+        <p>
+            After receiving every object, sorted the table on Last Change Bid
+        </p>
+        <p>
+            And finally added Sparkline functionality with 30 latest values assuming that we are getting data every second.
+        </p>
+        <h3>Frameworks/Libraries would like to use</h3>
+        <p>
+            <strong>AngularJS</strong> would be helpful to do this because of its data-binding nature.
+            Also <strong>Bootstrap</strong> would have helped to make it more responsive.
+        </p>
+        <h3>Contact Details</h3>
+            <p>
+                <b>Name:</b> Ashish Hasani <br>
+                <b>Email:</b> ashishhasani1@gmail.com
+            </p>
+    </section>
+</div>
+<!-- Code you write in index.js and anything it depends on will be bundled into bundle.js and
+     is included here -->
+<script src="bundle.js"></script>
+
+</body>
+</html>
